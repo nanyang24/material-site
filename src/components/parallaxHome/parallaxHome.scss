@@ -1,0 +1,45 @@
+.parallax-home {
+  .side-bar {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: auto;
+      box-shadow: 1px 1px 18px 0px #112;
+      border-bottom-right-radius: 10px;
+      border-top-right-radius: 10px;
+
+      > button {
+        max-width: 100%;
+      }
+    }
+  }
+
+  .first-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+
+    .masked-copy {
+        background-image: url('./img/text-bg-1.jpg');
+        background-repeat: no-repeat;
+        // 文字随背景遮罩
+        -webkit-background-clip:text;
+        -webkit-text-fill-color:transparent;
+
+      .intro {
+          font-size: 5vmin;
+          font-weight: 700;
+      }
+    }
+  }
+}
