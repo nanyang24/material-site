@@ -1,0 +1,52 @@
+.c {
+  position: absolute;
+  width: 100px;
+  height: 50px;
+  cursor: pointer;
+  will-change: transform, opacity;
+}
+
+.front,
+.back {
+  background-size: cover;
+}
+
+.back {
+  background-image: url(./img/WechatIMG168.png);
+}
+
+.front {
+  background-image: url(./img/WechatIMG169.png);
+}
+
+// .home.back {
+//     background-image: url(./img/11.png); 
+// }
+
+.home {
+  background-image: url(./img/111.png);
+  &.back {
+  background-image: url(./img/11.png);
+  }
+}
+
+.design {
+  background-image: url(./img/222.png);
+  &.back {
+  background-image: url(./img/22.png);
+  }
+}
+
+.video {
+  background-image: url(./img/333.png);
+  &.back {
+  background-image: url(./img/33.png);
+  }
+}
+
+.material {
+  background-image: url(./img/444.png);
+  &.back {
+  background-image: url(./img/44.png);
+  }
+}

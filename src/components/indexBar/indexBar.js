@@ -3,10 +3,11 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import BottomNavigation from "@material-ui/core/BottomNavigation";
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
-import Icon from "@material-ui/core/Icon";
-import RestoreIcon from "@material-ui/icons/Restore";
-import FavoriteIcon from "@material-ui/icons/Favorite";
-import LocationOnIcon from "@material-ui/icons/LocationOn";
+// import Icon from "@material-ui/core/Icon";
+import Home from "@material-ui/icons/Home";
+import ViewModule from "@material-ui/icons/ViewModule";
+import BlurLinear from "@material-ui/icons/BlurLinear";
+import VideoLibrary from "@material-ui/icons/VideoLibrary";
 
 const styles = {
   root: {
@@ -29,24 +30,24 @@ class LabelBottomNavigation extends React.Component {
         className={classes.root}
       >
         <BottomNavigationAction
-          label="第一屏"
+          label="首页"
           value={0}
-          icon={<RestoreIcon />}
+          icon={<Home />}
         />
         <BottomNavigationAction
-          label="第二屏"
+          label="平面设计"
           value={1}
-          icon={<FavoriteIcon />}
+          icon={<ViewModule />}
         />
         <BottomNavigationAction
-          label="第三屏"
+          label="字体库"
           value={2}
-          icon={<LocationOnIcon />}
+          icon={<BlurLinear />}
         />
         <BottomNavigationAction
-          label="第四屏"
+          label="视频"
           value={3}
-          icon={<Icon>folder</Icon>}
+          icon={<VideoLibrary />}
         />
       </BottomNavigation>
     );
