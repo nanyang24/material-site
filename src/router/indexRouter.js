@@ -10,6 +10,7 @@ const Dashboard = () => (
   </div>
 );
 
+// 导航配置
 const HeaderBarConfig = [
   {
     name: "首页",

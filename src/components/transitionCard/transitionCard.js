@@ -1,3 +1,5 @@
+// 3d CARD
+
 import React, { useState, useEffect, useRef } from "react";
 import { useTransition, animated as a } from "react-spring";
 import shuffle from "lodash/shuffle";
@@ -16,16 +18,20 @@ function TransitionCard() {
   const [items, set] = useState(data);
   const intervalRef = useRef();
 
+  // 在初始化和更新时 设置 定时 调整各自卡片位置 的函数
   useEffect(() => {
     const id = setInterval(() => {
       set(shuffle);
     }, 2000);
+
     intervalRef.current = id;
+
     return () => {
       clearInterval(intervalRef.current);
     };
   }, []);
 
+  // 卡片的最高高度计算
   let heights = new Array(columns).fill(0); // Each column gets a height starting with zero
   let gridItems = items.map((child, i) => {
     const column = heights.indexOf(Math.min(...heights)); // Basic masonry-grid placing, puts tile into the smallest column using Math.min
@@ -36,7 +42,7 @@ function TransitionCard() {
     return { ...child, xy, width: width / columns, height: child.height / 2 };
   });
 
-  // This turns gridItems into transitions, any addition, removal or change will be animated
+  // 渲染 每个卡片的位置计算
   const transitions = useTransition(gridItems, item => item.css, {
     from: ({ xy, width, height }) => ({ xy, width, height, opacity: 0 }),
     enter: ({ xy, width, height }) => ({ xy, width, height, opacity: 1 }),

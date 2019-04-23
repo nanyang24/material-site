@@ -2,7 +2,9 @@ import React from 'react'
 import { useSpring, animated } from 'react-spring'
 import './floatingCard.scss'
 
+// 计算 浮动位置 
 const calc = (x, y) => [-(y - window.innerHeight / 2) / 20, (x - window.innerWidth / 2) / 20, 1.1]
+// 计算 浮动幅度
 const trans = (x, y, s) => `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
 
 function Card() {

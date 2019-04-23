@@ -68,6 +68,9 @@ class ParallaxHome extends React.Component {
   };
 
   componentDidMount() {
+    // 页面初始化时 调用
+    // 监听 鼠标滚轮 或者 触控板
+
     window.addEventListener("wheel", this.scrollFullPage);
   }
 
@@ -75,6 +78,7 @@ class ParallaxHome extends React.Component {
     window.removeEventListener("wheel", this.scrollFullPage);
   }
 
+  // 滚动 一屏 的实现
   scrollFullPage = e => {
     const { currentPage } = this.state;
     let willToPage;
@@ -83,8 +87,12 @@ class ParallaxHome extends React.Component {
 
     this.isScrolling = true;
 
+    // 判断是 滚上一屏幕 还是 滚下一屏幕
     const isToBottom = !this.isPositiveInteger(+e.wheelDeltaY);
 
+    // 如果 当前是 第一屏 且 滚上一屏幕  
+    // 如果 当前是 最后一屏 且 滚下一屏幕  
+    // 都 终止执行
     if (
       (isToBottom && currentPage === PageNum - 1) ||
       (!isToBottom && currentPage === 0)
@@ -93,6 +101,7 @@ class ParallaxHome extends React.Component {
       return;
     }
 
+    // willToPage 将滚至第几页
     if (isToBottom) {
       willToPage = (currentPage % PageNum) + 1;
     } else {
